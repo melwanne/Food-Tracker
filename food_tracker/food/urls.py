@@ -2,6 +2,7 @@ from django.conf.urls import url
 from .views import index, add_meal, delete_meal, update_meal,view_meal
 
 urlpatterns = [
+    url(r'^$', login, name='login'),
     url(r'^$', index, name='index'),
     url(r'^add_meal$', add_meal, name='add-meal'),
     url(r'^delete_meal/(?P<meal_id>\d+)$', delete_meal, name='delete-meal'),
