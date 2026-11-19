@@ -1,0 +1,21 @@
+curl -X POST \
+  -H "Authorization: Bearer $JIRA_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  https://jira.sec.samsung.net/rest/api/2/issue \
+  -d '{
+    "fields": {
+      "project": {"key": "AIPIT"},
+      "issuetype": {"name": "Task"},
+      "summary": "Ticket summary",
+      "priority": {"name": "Medium"},
+      "description": "Ticket description"
+    }
+  }'
+####
+__o get a working Jira PAT:__
+
+1. Log in to `jira.sec.samsung.net` as `srph.mlp` (AD: `SAMsung2@26`)
+2. Go to __Profile__ (top right) → __Personal Access Tokens__
+3. Create a new token with API access
+4. Use that token for the Jira API calls
+
